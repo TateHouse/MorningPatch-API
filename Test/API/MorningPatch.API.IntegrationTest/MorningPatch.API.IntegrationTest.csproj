@@ -22,4 +22,8 @@
         <Using Include="NUnit.Framework"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Source\API\MorningPatch.API\MorningPatch.API.csproj" />
+    </ItemGroup>
+
 </Project>
