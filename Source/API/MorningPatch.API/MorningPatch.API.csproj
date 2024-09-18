@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\MorningPatch.Application\MorningPatch.Application.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\MorningPatch.Persistence\MorningPatch.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

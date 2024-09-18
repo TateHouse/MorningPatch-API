@@ -21,4 +21,8 @@
         <Using Include="NUnit.Framework"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Source\Infrastructure\MorningPatch.Persistence\MorningPatch.Persistence.csproj" />
+    </ItemGroup>
+
 </Project>
