@@ -1,5 +1,6 @@
 ﻿namespace MorningPatch.Persistence;
 using Microsoft.EntityFrameworkCore;
+using MorningPatch.Domain;
 
 /**
  * <summary>
@@ -8,6 +9,13 @@ using Microsoft.EntityFrameworkCore;
  */
 public sealed class DatabaseContext : DbContext
 {
+	/**
+	 * <summary>
+	 * The collection of <see cref="SteamGame"/> that the user owns on Steam.
+	 * </summary>
+	 */
+	public DbSet<SteamGame> OwnedSteamGames { get; set; }
+
 	/**
 	 * <summary>
 	 * Instantiates a new <see cref="DatabaseContext"/> instance.
