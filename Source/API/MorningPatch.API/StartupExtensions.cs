@@ -10,6 +10,7 @@ public static class StartupExtensions
 		builder.Configuration.Sources.Clear();
 		builder.Configuration.AddJsonFile("AppSettings.json", false, true);
 		builder.Configuration.AddJsonFile($"AppSettings.{builder.Environment.EnvironmentName}.json", true, true);
+		builder.Configuration.AddEnvironmentVariables();
 
 		builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 		builder.Services.RegisterApplicationServices();
@@ -26,6 +27,7 @@ public static class StartupExtensions
 								  });
 		});
 
+		builder.Services.AddHttpClient();
 		builder.Services.AddEndpointsApiExplorer();
 		builder.Services.AddSwaggerGen(setupAction =>
 		{

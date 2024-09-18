@@ -10,7 +10,6 @@ using MorningPatch.Domain;
  */
 public sealed class SteamGameConfiguration : IEntityTypeConfiguration<SteamGame>
 {
-
 	public void Configure(EntityTypeBuilder<SteamGame> builder)
 	{
 		builder.HasKey(steamGame => steamGame.AppId);

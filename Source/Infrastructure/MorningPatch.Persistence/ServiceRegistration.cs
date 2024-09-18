@@ -18,6 +18,7 @@ public static class ServiceRegistration
 	 * <summary>
 	 * An extension method for <see cref="IServiceCollection"/> to register the <see cref="Persistence"/> services.
 	 * </summary>
+	 * <param name="configuration">The application's set of key/value pair configurations.</param>
 	 * <exception cref="ArgumentException">Thrown if the database name or provider is null or whitespace.</exception>
 	 * <exception cref="InvalidOperationException">Thrown if the database settings failed to parse.</exception>
 	 * <exception cref="NotSupportedException">Thrown if the database provider is not supported.</exception>
