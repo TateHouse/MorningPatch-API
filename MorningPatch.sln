@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MorningPatch.Domain.UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MorningPatch.Application.UnitTest", "Test\Core\MorningPatch.Application.UnitTest\MorningPatch.Application.UnitTest.csproj", "{A2C92D36-D9F3-484B-9C7A-71E2E15C8CD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6ED5BE67-73A7-49E7-BCE4-BE3A9DA55891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MorningPatch.Persistence", "Source\Infrastructure\MorningPatch.Persistence\MorningPatch.Persistence.csproj", "{E136E4AC-128A-46AE-AAFF-C1F7FF82848E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,8 @@ Global
 		{75E3732F-6C55-4A64-B5F8-E7042E22F481} = {4ADBACFF-250B-41A7-BB49-8BB5CC9447DD}
 		{924CC1E4-D482-43FA-9F43-41EA973C75C8} = {75E3732F-6C55-4A64-B5F8-E7042E22F481}
 		{A2C92D36-D9F3-484B-9C7A-71E2E15C8CD0} = {75E3732F-6C55-4A64-B5F8-E7042E22F481}
+		{6ED5BE67-73A7-49E7-BCE4-BE3A9DA55891} = {FD235BA9-EEC2-465B-8706-8CB846DE53F9}
+		{E136E4AC-128A-46AE-AAFF-C1F7FF82848E} = {6ED5BE67-73A7-49E7-BCE4-BE3A9DA55891}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6F00560D-6984-421D-99D0-92E2FFE8A61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -66,5 +72,9 @@ Global
 		{A2C92D36-D9F3-484B-9C7A-71E2E15C8CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2C92D36-D9F3-484B-9C7A-71E2E15C8CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2C92D36-D9F3-484B-9C7A-71E2E15C8CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E136E4AC-128A-46AE-AAFF-C1F7FF82848E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E136E4AC-128A-46AE-AAFF-C1F7FF82848E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E136E4AC-128A-46AE-AAFF-C1F7FF82848E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E136E4AC-128A-46AE-AAFF-C1F7FF82848E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
