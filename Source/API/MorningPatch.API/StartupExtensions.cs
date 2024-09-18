@@ -1,6 +1,7 @@
 ﻿namespace MorningPatch.API;
 using Microsoft.OpenApi.Models;
 using MorningPatch.Application;
+using MorningPatch.Persistence;
 
 public static class StartupExtensions
 {
@@ -12,6 +13,7 @@ public static class StartupExtensions
 
 		builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 		builder.Services.RegisterApplicationServices();
+		builder.Services.RegisterPersistenceServices(builder.Configuration);
 
 		builder.Services.AddCors(setupAction =>
 		{
