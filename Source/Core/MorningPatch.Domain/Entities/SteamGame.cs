@@ -1,4 +1,4 @@
-﻿namespace MorningPatch.Domain;
+﻿namespace MorningPatch.Domain.Entities;
 
 /**
  * <summary>

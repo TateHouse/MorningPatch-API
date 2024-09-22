@@ -1,6 +1,6 @@
 ﻿namespace MorningPatch.Persistence;
 using Microsoft.EntityFrameworkCore;
-using MorningPatch.Domain;
+using MorningPatch.Domain.Entities;
 
 /**
  * <summary>
@@ -14,7 +14,7 @@ public sealed class DatabaseContext : DbContext
 	 * The collection of <see cref="SteamGame"/> that the user owns on Steam.
 	 * </summary>
 	 */
-	public DbSet<SteamGame> OwnedSteamGames { get; set; }
+	public DbSet<SteamGame> SteamGames { get; set; }
 
 	/**
 	 * <summary>

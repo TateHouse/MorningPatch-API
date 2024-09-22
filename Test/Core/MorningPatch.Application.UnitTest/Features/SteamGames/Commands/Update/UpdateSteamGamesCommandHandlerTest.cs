@@ -5,7 +5,7 @@ using Moq.Protected;
 using MorningPatch.Application.Abstractions.Persistence.Repositories;
 using MorningPatch.Application.Features.SteamGames.Commands.Update;
 using MorningPatch.Application.UnitTest.Utilities;
-using MorningPatch.Domain;
+using MorningPatch.Domain.Entities;
 using System.Net;
 using JsonSerializer=System.Text.Json.JsonSerializer;
 

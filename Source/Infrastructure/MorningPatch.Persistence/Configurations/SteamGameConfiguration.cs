@@ -1,7 +1,7 @@
 ﻿namespace MorningPatch.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MorningPatch.Domain;
+using MorningPatch.Domain.Entities;
 
 /**
  * <summary>

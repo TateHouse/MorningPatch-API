@@ -1,7 +1,9 @@
 ﻿namespace MorningPatch.Application.Features.SteamGames.Commands.Update.DTOs;
+using MorningPatch.Domain.Entities;
+
 /**
  * <summary>
- * A data transfer object containing the number of <see cref="MorningPatch.Domain.SteamGame"/> entities updated in the
+ * A data transfer object containing the number of <see cref="SteamGame"/> entities updated in the
  * database.
  * </summary>
  */

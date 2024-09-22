@@ -1,5 +1,5 @@
 ﻿namespace MorningPatch.Application.Utilities.Json;
-using MorningPatch.Domain;
+using MorningPatch.Domain.Entities;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 

@@ -1,6 +1,6 @@
 ﻿namespace MorningPatch.Application.UnitTest.Utilities.Json;
 using MorningPatch.Application.Utilities.Json;
-using MorningPatch.Domain;
+using MorningPatch.Domain.Entities;
 using System.Text.Json;
 
 [TestFixture]

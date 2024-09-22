@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using MorningPatch.Application.Abstractions.Persistence.Repositories;
 using MorningPatch.Application.Features.SteamGames.Commands.Update.DTOs;
 using MorningPatch.Application.Utilities.Json;
-using MorningPatch.Domain;
+using MorningPatch.Domain.Entities;
 using System.Text.Json;
 using System.Web;
 
