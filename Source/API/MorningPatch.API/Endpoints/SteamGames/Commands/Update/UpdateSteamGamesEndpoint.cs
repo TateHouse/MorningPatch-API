@@ -6,7 +6,7 @@ using MorningPatch.Application.Features.SteamGames.Commands.Update;
 
 /**
  * <summary>
- * An endpoint for updating the <see cref="MorningPatch.Domain.Entities.SteamGame"/> stored in the database.
+ * An endpoint for updating the <see cref="MorningPatch.Domain.Entities.SteamGame"/> entities stored in the database.
  * </summary>
  */
 public static class UpdateSteamGamesEndpoint
