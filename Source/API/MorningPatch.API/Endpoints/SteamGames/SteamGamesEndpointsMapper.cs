@@ -1,5 +1,6 @@
 ﻿namespace MorningPatch.API.Endpoints.SteamGames;
 using MorningPatch.API.Endpoints.SteamGames.Commands.Update;
+using MorningPatch.API.Endpoints.SteamGames.Queries.List;
 
 /**
  * <summary>
@@ -26,6 +27,7 @@ public static class SteamGamesEndpointsMapper
 	{
 		var groupBuilder = application.MapGroup(SteamGamesEndpointsMapper.Prefix);
 
+		ListSteamGamesEndpoint.MapEndpoint(groupBuilder, SteamGamesEndpointsMapper.Tags);
 		UpdateSteamGamesEndpoint.MapEndpoint(groupBuilder, SteamGamesEndpointsMapper.Tags);
 	}
 }
