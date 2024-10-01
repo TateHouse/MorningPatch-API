@@ -78,7 +78,6 @@ public sealed class UpdateSteamGamesCommandHandlerTest
 	[Test]
 	public async Task WhenHandle_ThenNewOwnedSteamGamesAreAddedToDatabase()
 	{
-
 		var steamGamesJsonResponse = JsonSerializer.Serialize(new
 		{
 			response = new
@@ -126,14 +125,14 @@ public sealed class UpdateSteamGamesCommandHandlerTest
 		var request = new UpdateSteamGamesCommand();
 		var response = await commandHandler.Handle(request, CancellationToken.None);
 
+		Assert.That(response.Count, Is.EqualTo(2));
+
 		mockConfiguration.Verify(mock => mock["STEAM_WEB_API_KEY"], Times.Once);
 		mockConfiguration.Verify(mock => mock["STEAM_ID"]);
 		mockSteamGameRepository.Verify(mock => mock.ListAsync(It.IsAny<CancellationToken>()), Times.Once);
 		mockSteamGameRepository.Verify(mock => mock.AddRangeAsync(It.IsAny<IEnumerable<SteamGame>>(), It.IsAny<CancellationToken>()), Times.Once);
 		mockSteamGameRepository.Verify(mock => mock.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
 		mockHttpClientFactory.Verify(mock => mock.CreateClient(It.IsAny<string>()), Times.Once);
-
-		Assert.That(response.Count, Is.EqualTo(2));
 	}
 
 	[Test]
@@ -174,14 +173,14 @@ public sealed class UpdateSteamGamesCommandHandlerTest
 		var request = new UpdateSteamGamesCommand();
 		var response = await commandHandler.Handle(request, CancellationToken.None);
 
+		Assert.That(response.Count, Is.Zero);
+
 		mockConfiguration.Verify(mock => mock["STEAM_WEB_API_KEY"], Times.Once);
 		mockConfiguration.Verify(mock => mock["STEAM_ID"]);
 		mockSteamGameRepository.Verify(mock => mock.ListAsync(It.IsAny<CancellationToken>()), Times.Once);
 		mockSteamGameRepository.Verify(mock => mock.AddRangeAsync(It.IsAny<IEnumerable<SteamGame>>(), It.IsAny<CancellationToken>()), Times.Never);
 		mockSteamGameRepository.Verify(mock => mock.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Never);
 		mockHttpClientFactory.Verify(mock => mock.CreateClient(It.IsAny<string>()), Times.Once);
-
-		Assert.That(response.Count, Is.Zero);
 	}
 
 	[Test]

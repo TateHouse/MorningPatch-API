@@ -1,5 +1,7 @@
 ﻿namespace MorningPatch.Application;
 using Microsoft.Extensions.DependencyInjection;
+using MorningPatch.Application.Abstractions.Application.SteamGameNews;
+using MorningPatch.Application.Features.SteamGameNews.Services;
 
 /**
  * <summary>
@@ -20,6 +22,8 @@ public static class ServiceRegistration
 		{
 			configuration.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
 		});
+
+		services.AddScoped<ISteamGameNewsService, SteamGameNewsService>();
 
 		return services;
 	}
