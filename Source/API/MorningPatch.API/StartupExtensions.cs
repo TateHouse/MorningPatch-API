@@ -1,11 +1,22 @@
 ﻿namespace MorningPatch.API;
 using Microsoft.OpenApi.Models;
+using MorningPatch.API.Endpoints.SteamGameNews;
 using MorningPatch.API.Endpoints.SteamGames;
 using MorningPatch.Application;
 using MorningPatch.Persistence;
 
+/**
+ * <summary>
+ * A class to configure the API services and middleware.
+ * </summary>
+ */
 public static class StartupExtensions
 {
+	/**
+	 * <summary>
+	 * An extension method for <see cref="WebApplicationBuilder"/> to configure the application's services.
+	 * </summary>
+	 */
 	public static WebApplicationBuilder ConfigureServices(this WebApplicationBuilder builder)
 	{
 		builder.Configuration.Sources.Clear();
@@ -53,6 +64,11 @@ public static class StartupExtensions
 		return builder;
 	}
 
+	/**
+	 * <summary>
+	 * An extension method for <see cref="WebApplication"/> to configure the application's middleware.
+	 * </summary>
+	 */
 	public static WebApplication ConfigureMiddleware(this WebApplication application)
 	{
 		application.UseCors("Open");
@@ -67,7 +83,8 @@ public static class StartupExtensions
 			});
 		}
 
-		application.MapSteamGamesEndpointsMapper();
+		application.MapSteamGamesEndpoints();
+		application.MapSteamGameNewsEndpoints();
 
 		return application;
 	}

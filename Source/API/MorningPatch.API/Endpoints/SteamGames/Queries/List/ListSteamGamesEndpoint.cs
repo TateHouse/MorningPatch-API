@@ -16,7 +16,7 @@ public static class ListSteamGamesEndpoint
 	 * Maps the endpoint.
 	 * </summary>
 	 * <param name="groupBuilder">The builder for the route group.</param>
-	 * <param name="tags">An array of tags to assocaite with this endpoint.</param>
+	 * <param name="tags">An array of tags to associate with this endpoint.</param>
 	 */
 	public static void MapEndpoint(RouteGroupBuilder groupBuilder, string[] tags)
 	{
@@ -39,8 +39,8 @@ public static class ListSteamGamesEndpoint
 	private async static Task<IResult> HandleAsync(IMediator mediator,
 												   IMapper mapper)
 	{
-		var request = new ListSteamGamesQuery();
-		var response = mapper.Map<ListSteamGamesEndpointResponse>(await mediator.Send(request));
+		var query = new ListSteamGamesQuery();
+		var response = mapper.Map<ListSteamGamesEndpointResponse>(await mediator.Send(query));
 
 		return Results.Ok(response);
 	}

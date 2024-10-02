@@ -51,7 +51,7 @@ public sealed class UpdateSteamGamesEndpointTest : EndpointTest
 
 		if (steamGame == null)
 		{
-			Assert.Fail();
+			Assert.Fail("No Steam games are stored in the database");
 		}
 
 		databaseContext.SteamGames.Remove(steamGame!);

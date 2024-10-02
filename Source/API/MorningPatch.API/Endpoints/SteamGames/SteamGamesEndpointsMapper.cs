@@ -4,7 +4,7 @@ using MorningPatch.API.Endpoints.SteamGames.Queries.List;
 
 /**
  * <summary>
- * Maps teh <see cref="MorningPatch.Domain.Entities.SteamGame"/> related endpoints.
+ * Maps the <see cref="MorningPatch.Domain.Entities.SteamGame"/> related endpoints.
  * </summary>
  */
 public static class SteamGamesEndpointsMapper
@@ -23,7 +23,7 @@ public static class SteamGamesEndpointsMapper
 	 * <see cref="MorningPatch.Domain.Entities.SteamGame"/> related endpoints.
 	 * </summary>
 	 */
-	public static void MapSteamGamesEndpointsMapper(this WebApplication application)
+	public static void MapSteamGamesEndpoints(this WebApplication application)
 	{
 		var groupBuilder = application.MapGroup(SteamGamesEndpointsMapper.Prefix);
 
