@@ -38,10 +38,13 @@ public sealed class ListPreviousDaysNewsQueryHandler : IRequestHandler<ListPrevi
 	public async Task<ListPreviousDaysNewsQueryResponse> Handle(ListPreviousDaysNewsQuery request,
 																CancellationToken cancellationToken)
 	{
+		var startUnixTimestamp = DateTimeOffset.UtcNow.AddDays(request.DayOffset).ToUnixTimeSeconds();
 		var games = await steamGamesRepository.ListAsync(cancellationToken);
-		var tasks = games.Select(async game => await steamGameNewsService.GetNewsForGameAsync(game, request.DayOffset));
-		var news = await Task.WhenAll(tasks);
+		var tasks = games.Select(async game => await steamGameNewsService.GetNewsForGameAsync(game, startUnixTimestamp));
+		var gameNews = (await Task.WhenAll(tasks)).Where(news => news.Any())
+												  .SelectMany(news => news)
+												  .ToList();
 
-		return mapper.Map<ListPreviousDaysNewsQueryResponse>(news.SelectMany(news => news).ToList());
+		return mapper.Map<ListPreviousDaysNewsQueryResponse>(gameNews);
 	}
 }

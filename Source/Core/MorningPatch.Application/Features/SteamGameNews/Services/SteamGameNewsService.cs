@@ -43,11 +43,16 @@ public sealed class SteamGameNewsService : ISteamGameNewsService
 		var jsonOptions = new JsonSerializerOptions();
 		jsonOptions.Converters.Add(new SteamGameNewsJsonConverter(steamGame));
 
-		var gameNews = (JsonSerializer.Deserialize<List<SteamGameNews>>(newsJson.GetRawText(), jsonOptions) ?? new List<SteamGameNews>())
-					   .AsEnumerable()
-					   .Where(news => news.UnixTimestamp >= startUnixTimestamp);
+		var gameNews = JsonSerializer.Deserialize<List<SteamGameNews>>(newsJson.GetRawText(), jsonOptions) ?? new List<SteamGameNews>();
+		var filteredGameNews = gameNews.Where(news => news.UnixTimestamp >= startUnixTimestamp)
+									   .Select(news => news with
+									   {
+										   AppId = steamGame.AppId,
+										   Name = steamGame.Name,
+										   ImageIconHash = steamGame.ImageIconHash
+									   });
 
-		return gameNews;
+		return filteredGameNews;
 	}
 
 	/**

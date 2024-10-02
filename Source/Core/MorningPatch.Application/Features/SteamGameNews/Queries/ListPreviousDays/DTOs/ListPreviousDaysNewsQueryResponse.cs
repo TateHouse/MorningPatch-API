@@ -6,5 +6,5 @@
  */
 public sealed record ListPreviousDaysNewsQueryResponse
 {
-	public IReadOnlyList<ListPreviousDaysNewsQueryNewsResponse> News { get; init; }
+	public required IReadOnlyList<ListPreviousDaysNewsQueryNewsResponse> News { get; init; }
 }

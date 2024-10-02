@@ -7,8 +7,8 @@
 public sealed record SteamGameNews
 {
 	public required int AppId { get; init; }
-	public required string Name { get; set; }
-	public required string ImageIconHash { get; set; }
+	public required string Name { get; init; }
+	public required string ImageIconHash { get; init; }
 	public required string Title { get; init; }
 	public required string Author { get; init; }
 	public required long UnixTimestamp { get; init; }

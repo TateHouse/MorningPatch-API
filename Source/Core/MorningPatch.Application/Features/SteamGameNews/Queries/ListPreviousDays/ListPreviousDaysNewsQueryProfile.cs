@@ -1,7 +1,6 @@
 ﻿namespace MorningPatch.Application.Features.SteamGameNews.Queries.ListPreviousDays;
 using AutoMapper;
 using MorningPatch.Application.Features.SteamGameNews.Queries.ListPreviousDays.DTOs;
-using MorningPatch.Domain.Entities;
 using MorningPatch.Domain.Models;
 
 /**
@@ -13,13 +12,20 @@ public sealed class ListPreviousDaysNewsQueryProfile : Profile
 {
 	/**
 	 * <summary>
-	 * Instantaites a new <see cref="ListPreviousDaysNewsQueryProfile"/> instance.
+	 * Instantiates a new <see cref="ListPreviousDaysNewsQueryProfile"/> instance.
 	 * </summary>
 	 */
 	public ListPreviousDaysNewsQueryProfile()
 	{
-		CreateMap<SteamGame, ListPreviousDaysNewsQuerySteamGameResponse>();
-		CreateMap<SteamGameNews, ListPreviousDaysNewsQueryNewsResponse>();
+		CreateMap<SteamGameNews, ListPreviousDaysNewsQueryNewsResponse>()
+			.ForMember(destinationMember => destinationMember.SteamGame,
+					   memberOptions => memberOptions.MapFrom(sourceMember => new ListPreviousDaysNewsQuerySteamGameResponse
+					   {
+						   AppId = sourceMember.AppId,
+						   Name = sourceMember.Name,
+						   ImageIconHash = sourceMember.ImageIconHash
+					   }));
+
 		CreateMap<IEnumerable<SteamGameNews>, ListPreviousDaysNewsQueryResponse>()
 			.ForMember(destinationMember => destinationMember.News,
 					   memberOptions => memberOptions.MapFrom(sourceMember => sourceMember));
